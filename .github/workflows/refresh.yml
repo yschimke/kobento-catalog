@@ -1,0 +1,68 @@
+name: Refresh snapshot
+
+# Kobento's component library lives on its server (the private kobento-mcp), so the snapshot is a
+# copy that goes stale silently. Once a week, re-fetch it with the `KOBENTO_TOKEN` secret and open a
+# pull request when the interface changed. Without the secret the job says so and succeeds.
+#
+# Once Kobento publishes a versioned manifest, this reads that URL instead and needs no token.
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: refresh-snapshot
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh Kobento snapshot
+    if: ${{ github.repository == 'yschimke/kobento-catalog' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      KOBENTO_TOKEN: ${{ secrets.KOBENTO_TOKEN }}
+      BRANCH: kobento-refresh
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: Fetch and regenerate
+        id: fetch
+        run: |
+          set -euo pipefail
+          if [ -z "${KOBENTO_TOKEN}" ]; then
+            echo "::notice::KOBENTO_TOKEN is not set; skipping the refresh."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 -I generator/snapshot.py fetch
+          python3 -I generator/snapshot.py check
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update the pull request
+        if: steps.fetch.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "${BRANCH}"
+          git commit -qam "chore(catalog): refresh the Kobento component snapshot"
+          git push -q --force origin "${BRANCH}"
+          if [ -z "$(gh pr list --head "${BRANCH}" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head "${BRANCH}" --base main \
+              --title "chore(catalog): refresh the Kobento component snapshot" \
+              --body "Kobento's component interfaces changed since the last snapshot. \`generator/snapshot.py fetch\` rewrote \`catalog/components.snapshot.json\` and regenerated \`catalog/ui-builder.json\`. Review the diff for removed or renamed components before merging: a design using one stops validating."
+          fi
