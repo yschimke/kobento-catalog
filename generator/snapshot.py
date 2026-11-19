@@ -31,6 +31,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT = ROOT / "catalog" / "components.snapshot.json"
 PUBLISHED = ROOT / "catalog" / "ui-builder.json"
+DESIGNS = ROOT / "catalog" / "designs"
+
+# The seed a new design starts from when none is named: a host opens the first template listed.
+DEFAULT_TEMPLATE = "kobento-screen"
 ENDPOINT = "https://mcp.kobento.dev/mcp"
 
 PREFIX = "kobento/"
@@ -190,6 +194,7 @@ def published_of(snapshot: dict) -> dict:
             }
         builtins[component_id] = builtin
         menu[component_id] = {"group": "Components"}
+    templates = templates_of(builtins)
     clickable = sorted(
         PREFIX + kebab(c["name"])
         for c in snapshot["components"]
@@ -223,6 +228,8 @@ def published_of(snapshot: dict) -> dict:
                 },
             },
             "frame": {"adapter": "frame/rect"},
+            # Seed documents, published beside this file at these paths (publish.yml).
+            "templates": templates,
             "componentMenu": {"groupOrder": ["Text", "Components"], "components": menu},
             "builtins": builtins,
             # Read by the Kobento exporter, passed through verbatim by every other reader.
@@ -241,6 +248,37 @@ def published_of(snapshot: dict) -> dict:
             },
         },
     }
+
+
+def templates_of(builtins: dict) -> list:
+    """The seed documents in catalog/designs, default first, checked against this catalog.
+
+    A host refuses the whole template set when one is unusable, and a seed naming a component the
+    catalog does not serve opens as a broken design, so both are caught here rather than there.
+    """
+    paths = sorted(DESIGNS.glob("*.json"), key=lambda p: (p.stem != DEFAULT_TEMPLATE, p.stem))
+    if not any(p.stem == DEFAULT_TEMPLATE for p in paths):
+        sys.exit(f"catalog/designs has no {DEFAULT_TEMPLATE}.json, the default seed")
+    for path in paths:
+        where = path.relative_to(ROOT)
+        design = json.loads(path.read_text())
+        if design.get("id") != path.stem or design.get("template") != path.stem:
+            sys.exit(f"{where}: id and template must both be {path.stem!r}")
+        if design.get("catalogPin", {}).get("systemId") != "kobento":
+            sys.exit(f"{where}: must be pinned to the kobento catalog")
+        nodes = design.get("nodes", {})
+        if not design.get("roots") or any(r not in nodes for r in design["roots"]):
+            sys.exit(f"{where}: a root it does not hold")
+        for node_id, node in nodes.items():
+            component = node.get("componentId", "")
+            # layout/* is the builder's own vocabulary, served beside every catalog.
+            if component not in builtins and not component.startswith("layout/"):
+                sys.exit(f"{where}: node {node_id} names {component}, which this catalog lacks")
+            for children in node.get("slots", {}).values():
+                missing = [c for c in children if c not in nodes]
+                if missing:
+                    sys.exit(f"{where}: node {node_id} slots name missing nodes {missing}")
+    return [f"ui-builder/designs/{p.name}" for p in paths]
 
 
 def write(path: Path, value: dict) -> None:

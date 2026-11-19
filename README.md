@@ -14,6 +14,7 @@ components' interfaces** (names, parameters, types, defaults, slots) taken from 
 | --- | --- |
 | [`catalog/components.snapshot.json`](catalog/components.snapshot.json) | the interface snapshot |
 | [`catalog/ui-builder.json`](catalog/ui-builder.json) | the published catalog, generated |
+| [`catalog/designs/`](catalog/designs) | seed documents a new design starts from, hand-written; `kobento-screen` is the default |
 | [`generator/snapshot.py`](generator/snapshot.py) | `fetch` (needs a token), `generate`, `check` |
 
 ## Refreshing
@@ -31,7 +32,13 @@ when the interface changed.
 
 Every push to `main` force-pushes the catalog to `design-artifacts/kobento` on
 `yschimke/kobento-catalog-out` (needs the `ARTIFACTS_TOKEN` secret), where a UI Builder host reads
-it like the other published catalogs.
+it like the other published catalogs. The seed documents go to `ui-builder/designs/` beside it, at
+the paths `statusSemantics.templates` lists.
+
+A seed is a design document pinned to `kobento`, whose `id` and `template` are its file name.
+`generate` lists every file in `catalog/designs/` (the default first), and `check` refuses one that
+names a component the catalog does not serve. Without a seed, a host falls back to its own blank
+screen, whose root this catalog does not hold.
 
 ## Design
 
