@@ -20,6 +20,10 @@
     "frame": {
       "adapter": "frame/rect"
     },
+    "templates": [
+      "ui-builder/designs/kobento-screen.json",
+      "ui-builder/designs/kobento-thermostat.json"
+    ],
     "componentMenu": {
       "groupOrder": [
         "Text",
