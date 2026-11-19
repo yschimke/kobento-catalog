@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>yschimke/renovate-config",
+    ":dependencyDashboard",
+    ":semanticCommits"
+  ],
+  "timezone": "UTC",
+  "description": "This repository has no build dependencies: the generator is stdlib Python. Renovate only keeps the GitHub Actions pins current, in one weekly batch, automerged once the required `check` passes (the `Protect Main` ruleset from yschimke/renovate-config's repo-policy).",
+  "automerge": true,
+  "automergeType": "pr",
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "CI toolchain",
+      "schedule": ["before 9am on Monday"]
+    }
+  ]
+}
