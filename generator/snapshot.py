@@ -232,6 +232,10 @@ def published_of(snapshot: dict) -> dict:
             "templates": templates,
             "componentMenu": {"groupOrder": ["Text", "Components"], "components": menu},
             "builtins": builtins,
+            # The document format a design exports as: compose-ui-builder's CatalogDocumentFormats
+            # resolves this to its Kobento component JSON writer, which reads `kobento` below as
+            # its policy (docs/design/UI_BUILDER_CATALOG_FORMATS.md there).
+            "documentFormat": {"adapter": "kobento-component-json", "version": 1},
             # Read by the Kobento exporter, passed through verbatim by every other reader.
             "kobento": {
                 "componentSets": snapshot["sets"],
