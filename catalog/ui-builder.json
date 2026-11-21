@@ -6955,6 +6955,10 @@
         ]
       }
     },
+    "documentFormat": {
+      "adapter": "kobento-component-json",
+      "version": 1
+    },
     "kobento": {
       "componentSets": [
         "default",
