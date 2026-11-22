@@ -14,7 +14,7 @@
     "previewSurfaces": {
       "wasm": {
         "fidelity": "approximate",
-        "reason": "Kobento components are expanded by Kobento's server, not composed. The canvas draws the common ones as Material look-alikes and the rest as labelled placeholders; the picture comes from playing the converted .rc."
+        "reason": "Kobento components are expanded by Kobento's server, not composed. The canvas draws each as a labelled placeholder; the picture comes from playing the converted .rc."
       }
     },
     "frame": {
@@ -327,22 +327,17 @@
       "kobento/document": {
         "role": "screen-root",
         "displayName": "Kobento document",
-        "canvas": "layout/column",
+        "canvas": "placeholder",
         "slots": {
           "content": {
             "ordered": true
-          }
-        },
-        "canvasMapping": {
-          "slots": {
-            "children": "content"
           }
         }
       },
       "kobento/text": {
         "role": "element",
         "displayName": "Text",
-        "canvas": "m3/text",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "value",
@@ -360,13 +355,7 @@
             "jsonType": "string",
             "notes": "\"#AARRGGBB\" or a theme token such as \"@colors.onSurface\""
           }
-        ],
-        "canvasMapping": {
-          "properties": {
-            "text": "value",
-            "fontSizeSp": "fontSize"
-          }
-        }
+        ]
       },
       "kobento/activity-rings": {
         "role": "element",
@@ -617,7 +606,7 @@
       "kobento/badge": {
         "role": "element",
         "displayName": "Badge",
-        "canvas": "m3/text",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "text",
@@ -649,7 +638,7 @@
       "kobento/banner": {
         "role": "element",
         "displayName": "Banner",
-        "canvas": "m3/text",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "text",
@@ -791,7 +780,7 @@
       "kobento/big-number": {
         "role": "element",
         "displayName": "Big Number",
-        "canvas": "m3/text",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "value",
@@ -881,12 +870,7 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ],
-        "canvasMapping": {
-          "properties": {
-            "text": "value"
-          }
-        }
+        ]
       },
       "kobento/board": {
         "role": "element",
@@ -981,7 +965,7 @@
       "kobento/button": {
         "role": "element",
         "displayName": "Button",
-        "canvas": "m3/button",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "label",
@@ -1030,11 +1014,6 @@
           "icon": {
             "required": false,
             "ordered": true
-          }
-        },
-        "canvasMapping": {
-          "properties": {
-            "text": "label"
           }
         }
       },
@@ -1194,7 +1173,7 @@
       "kobento/card": {
         "role": "element",
         "displayName": "Card",
-        "canvas": "m3/card",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "title",
@@ -1583,7 +1562,7 @@
       "kobento/checkbox": {
         "role": "element",
         "displayName": "Checkbox",
-        "canvas": "m3/checkbox",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "checked",
@@ -2215,7 +2194,7 @@
       "kobento/divider": {
         "role": "element",
         "displayName": "Divider",
-        "canvas": "m3/horizontal-divider",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "inset",
@@ -2456,7 +2435,7 @@
       "kobento/fab": {
         "role": "element",
         "displayName": "Fab",
-        "canvas": "m3/button",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "label",
@@ -2497,11 +2476,6 @@
           "icon": {
             "required": true,
             "ordered": true
-          }
-        },
-        "canvasMapping": {
-          "properties": {
-            "text": "label"
           }
         }
       },
@@ -3152,7 +3126,7 @@
       "kobento/label-value": {
         "role": "element",
         "displayName": "Label Value",
-        "canvas": "m3/text",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "label",
@@ -3206,12 +3180,7 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ],
-        "canvasMapping": {
-          "properties": {
-            "text": "value"
-          }
-        }
+        ]
       },
       "kobento/legend": {
         "role": "element",
@@ -4182,7 +4151,7 @@
       "kobento/progress-bar": {
         "role": "element",
         "displayName": "Progress Bar",
-        "canvas": "m3/progress-indicator",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "progress",
@@ -4218,7 +4187,7 @@
       "kobento/progress-ring": {
         "role": "element",
         "displayName": "Progress Ring",
-        "canvas": "m3/progress-indicator",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "progress",
@@ -4249,12 +4218,7 @@
             ],
             "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
           }
-        ],
-        "canvasMapping": {
-          "defaults": {
-            "variant": "circular"
-          }
-        }
+        ]
       },
       "kobento/qr-placeholder": {
         "role": "element",
@@ -5136,7 +5100,7 @@
       "kobento/slider": {
         "role": "element",
         "displayName": "Slider",
-        "canvas": "m3/slider",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "value",
@@ -5190,18 +5154,12 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ],
-        "canvasMapping": {
-          "properties": {
-            "valueFrom": "min",
-            "valueTo": "max"
-          }
-        }
+        ]
       },
       "kobento/snackbar": {
         "role": "element",
         "displayName": "Snackbar",
-        "canvas": "m3/text",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "text",
@@ -5486,7 +5444,7 @@
       "kobento/stat-tile": {
         "role": "element",
         "displayName": "Stat Tile",
-        "canvas": "m3/text",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "label",
@@ -5523,12 +5481,7 @@
             ],
             "notes": "Kobento type bool; default false; static: fixed when the call is expanded, not bindable to state"
           }
-        ],
-        "canvasMapping": {
-          "properties": {
-            "text": "value"
-          }
-        }
+        ]
       },
       "kobento/step-explainer": {
         "role": "element",
@@ -6044,7 +5997,7 @@
       "kobento/switch": {
         "role": "element",
         "displayName": "Switch",
-        "canvas": "m3/switch",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "checked",
@@ -6154,7 +6107,7 @@
       "kobento/text-field": {
         "role": "element",
         "displayName": "Text Field",
-        "canvas": "m3/outlined-text-field",
+        "canvas": "placeholder",
         "properties": [
           {
             "name": "value",
