@@ -35,7 +35,8 @@ The design is compose-ui-builder's
 generator/snapshot.py          fetch | generate | check (stdlib Python, 3.9+)
 catalog/components.snapshot.json   Kobento's component interfaces, from its MCP `find`
 catalog/ui-builder.json        the published catalog: every component a builtin (no Kotlin call site)
-catalog/kobento/               component definitions and the default theme (Apache-2.0, see NOTICE)
+catalog/kobento/               component definitions, default theme and json2rc.mjs (Apache-2.0, NOTICE)
+generator/build-json2rc.sh     rebuilds json2rc.mjs from a pinned kobento-tools commit
 catalog/designs/*.json         seed documents (hand-written), listed in ui-builder.json's templates
 .github/workflows/ci.yml       `check`, the required check: catalog matches the generator, JSON parses
 .github/workflows/publish.yml  main -> yschimke/kobento-catalog-out@design-artifacts/kobento (ARTIFACTS_TOKEN),

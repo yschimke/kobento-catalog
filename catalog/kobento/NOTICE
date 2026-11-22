@@ -12,5 +12,9 @@ summary, documentation, pitfalls and example call; theme.json from Kobento's own
 expansion of a probe document, which reads back every theme number and colour the
 definitions use, in each look.
 
+json2rc.mjs is Kobento's JSON to .rc converter (kobento-tools' json2rc), bundled
+into one browser module by generator/build-json2rc.sh from the kobento-tools
+commit named in its first line, so an editor can compile an expanded design.
+
 Kobento is not affiliated with Google, and neither Kobento nor Google endorses
 this repository.
