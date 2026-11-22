@@ -2724,7 +2724,11 @@
           ]
         },
         "visible": {
-          "type": "variable"
+          "type": "variable",
+          "initial": {
+            "type": "int",
+            "value": 1
+          }
         },
         "dismissible": {
           "type": "bool",
@@ -3730,7 +3734,8 @@
             "start",
             "center",
             "end"
-          ]
+          ],
+          "directional": true
         },
         "color": {
           "type": "color",
@@ -5744,7 +5749,8 @@
           "static": true
         },
         "column": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "emptyText": {
           "type": "string",
@@ -9299,7 +9305,8 @@
           "static": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "title": {
           "type": "string"
@@ -12426,7 +12433,8 @@
           "static": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "format": {
           "type": "enum",
@@ -12599,7 +12607,8 @@
           "default": "Chats"
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "listAt": {
           "type": "float",
@@ -14507,7 +14516,8 @@
       "version": 5,
       "params": {
         "checked": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "label": {
           "type": "string",
@@ -14829,7 +14839,8 @@
           "required": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "color": {
           "type": "color",
@@ -15040,7 +15051,8 @@
           "required": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "style": {
           "type": "enum",
@@ -15329,7 +15341,8 @@
           "static": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "label": {
           "type": "string",
@@ -15909,7 +15922,8 @@
           "default": "Most popular"
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": -1
         },
         "action": {
           "type": "string",
@@ -19087,13 +19101,16 @@
           "static": true
         },
         "sort": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "descending": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": -1
         },
         "onRowTap": {
           "type": "action"
@@ -19196,7 +19213,8 @@
             "start",
             "center",
             "end"
-          ]
+          ],
+          "directional": true
         },
         "color": {
           "type": "color",
@@ -19731,7 +19749,8 @@
       "version": 1,
       "params": {
         "value": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "label": {
           "type": "string",
@@ -21453,7 +21472,8 @@
       "version": 1,
       "params": {
         "visible": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "title": {
           "type": "string",
@@ -22272,7 +22292,8 @@
           "static": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         }
       },
       "locals": {
@@ -22753,10 +22774,12 @@
           "static": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "open": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "onClick": {
           "type": "action"
@@ -23947,7 +23970,8 @@
           "type": "string"
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "index": {
           "type": "float",
@@ -24815,7 +24839,8 @@
           "static": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": -1
         },
         "highlight": {
           "type": "bool",
@@ -29097,7 +29122,8 @@
             "center",
             "end",
             "spread"
-          ]
+          ],
+          "directional": true
         },
         "color": {
           "type": "color",
@@ -30836,10 +30862,12 @@
           "type": "string"
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "open": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "wideAt": {
           "type": "float",
@@ -31839,7 +31867,8 @@
           "type": "string"
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "region": {
           "type": "string",
@@ -34219,7 +34248,8 @@
       "version": 1,
       "params": {
         "open": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "items": {
           "type": "list",
@@ -34252,7 +34282,8 @@
           "static": true
         },
         "chosen": {
-          "type": "variable"
+          "type": "variable",
+          "initial": -1
         },
         "onSelect": {
           "type": "action"
@@ -36695,7 +36726,8 @@
           "static": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "title": {
           "type": "string"
@@ -38907,7 +38939,8 @@
           "static": true
         },
         "page": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "showDots": {
           "type": "bool",
@@ -39976,7 +40009,8 @@
           "default": 0
         },
         "liked": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "comments": {
           "type": "float",
@@ -45441,7 +45475,8 @@
           "required": true
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "showLabel": {
           "type": "bool",
@@ -45671,10 +45706,12 @@
       "version": 1,
       "params": {
         "low": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "high": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 1
         },
         "min": {
           "type": "float",
@@ -46540,7 +46577,8 @@
       "version": 3,
       "params": {
         "value": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "max": {
           "type": "float",
@@ -46914,7 +46952,8 @@
           "static": true
         },
         "open": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "trailWidth": {
           "type": "float"
@@ -50459,7 +50498,8 @@
       "version": 1,
       "params": {
         "position": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "duration": {
           "type": "float",
@@ -52237,7 +52277,8 @@
       "version": 2,
       "params": {
         "value": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "min": {
           "type": "float",
@@ -52622,7 +52663,8 @@
           "required": true
         },
         "shows": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "duration": {
           "type": "float",
@@ -52636,7 +52678,8 @@
           "type": "action"
         },
         "dismissed": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         }
       },
       "locals": {
@@ -53673,7 +53716,8 @@
           "type": "float"
         },
         "step": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "shown": {
           "type": "variable"
@@ -53751,7 +53795,8 @@
           "static": true
         },
         "playing": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "loop": {
           "type": "bool",
@@ -56426,7 +56471,8 @@
       "version": 4,
       "params": {
         "value": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "min": {
           "type": "float",
@@ -57901,7 +57947,8 @@
           "static": true
         },
         "dismissed": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "startLabel": {
           "type": "string"
@@ -58349,13 +58396,16 @@
           "static": true
         },
         "liked": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "passed": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "decision": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "onSwipe": {
           "type": "action"
@@ -59551,7 +59601,8 @@
       "version": 4,
       "params": {
         "checked": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "label": {
           "type": "string",
@@ -59838,7 +59889,8 @@
           ]
         },
         "selected": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "color": {
           "type": "color",
@@ -60593,7 +60645,8 @@
       "version": 1,
       "params": {
         "value": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "hour24": {
           "type": "bool",
@@ -61379,7 +61432,8 @@
           "required": true
         },
         "shows": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "x": {
           "type": "float",
@@ -61744,13 +61798,16 @@
       "version": 1,
       "params": {
         "playing": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "shuffle": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "repeat": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "size": {
           "type": "enum",
@@ -64892,7 +64949,8 @@
           "static": true
         },
         "step": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "shown": {
           "type": "variable"
@@ -64911,7 +64969,8 @@
           "static": true
         },
         "playing": {
-          "type": "variable"
+          "type": "variable",
+          "initial": 0
         },
         "captionHeight": {
           "type": "float",

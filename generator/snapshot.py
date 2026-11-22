@@ -93,7 +93,7 @@ def fetch() -> dict:
 # What a definition keeps: its structure, for an expander. Not its summary, docs, pitfalls or
 # example call, which are Kobento's documentation rather than the component.
 DEFINITION_KEYS = ("version", "params", "slots", "locals", "body")
-PARAM_KEYS = ("type", "required", "default", "static", "values", "inline")
+PARAM_KEYS = ("type", "required", "default", "static", "values", "initial", "directional")
 
 
 def definition_of(name: str) -> dict:
