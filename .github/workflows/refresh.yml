@@ -64,5 +64,5 @@ jobs:
           if [ -z "$(gh pr list --head "${BRANCH}" --state open --json number --jq '.[].number')" ]; then
             gh pr create --head "${BRANCH}" --base main \
               --title "chore(catalog): refresh the Kobento component snapshot" \
-              --body "Kobento's component interfaces changed since the last snapshot. \`generator/snapshot.py fetch\` rewrote \`catalog/components.snapshot.json\` and regenerated \`catalog/ui-builder.json\`. Review the diff for removed or renamed components before merging: a design using one stops validating."
+              --body "Kobento's components changed since the last snapshot. \`generator/snapshot.py fetch\` rewrote \`catalog/components.snapshot.json\` and \`catalog/kobento/\` (definitions, theme) and regenerated \`catalog/ui-builder.json\`. Review the diff for removed or renamed components before merging: a design using one stops validating."
           fi
