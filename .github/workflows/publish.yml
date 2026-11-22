@@ -55,8 +55,8 @@ jobs:
           # The definitions and theme an editor expands Kobento's component calls with, and their
           # attribution, which travels with them.
           mkdir -p "$out/kobento"
-          cp catalog/kobento/definitions.json catalog/kobento/theme.json catalog/kobento/NOTICE \
-            catalog/kobento/LICENSE "$out/kobento/"
+          cp catalog/kobento/definitions.json catalog/kobento/theme.json catalog/kobento/json2rc.mjs \
+            catalog/kobento/NOTICE catalog/kobento/LICENSE "$out/kobento/"
           # The seed documents, at the paths ui-builder.json's statusSemantics.templates names.
           mkdir -p "$out/ui-builder/designs"
           cp catalog/designs/*.json "$out/ui-builder/designs/"

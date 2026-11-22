@@ -18,6 +18,7 @@ it without asking Kobento.
 | [`catalog/ui-builder.json`](catalog/ui-builder.json) | the published catalog, generated |
 | [`catalog/kobento/definitions.json`](catalog/kobento/definitions.json) | each component's definition: params, slots, locals, body |
 | [`catalog/kobento/theme.json`](catalog/kobento/theme.json) | the default theme the definitions read: numbers, colours, mono modes |
+| [`catalog/kobento/json2rc.mjs`](catalog/kobento/json2rc.mjs) | Kobento's JSON → `.rc` converter as a browser module, built by `generator/build-json2rc.sh` |
 | [`catalog/designs/`](catalog/designs) | seed documents a new design starts from, hand-written; `kobento-screen` is the default |
 | [`generator/snapshot.py`](generator/snapshot.py) | `fetch` (needs a token), `generate`, `check` |
 

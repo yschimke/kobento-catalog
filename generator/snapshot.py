@@ -39,6 +39,9 @@ PUBLISHED = ROOT / "catalog" / "ui-builder.json"
 DESIGNS = ROOT / "catalog" / "designs"
 DEFINITIONS = ROOT / "catalog" / "kobento" / "definitions.json"
 THEME = ROOT / "catalog" / "kobento" / "theme.json"
+COMPILER = ROOT / "catalog" / "kobento" / "json2rc.mjs"
+# The paths, on the delivery branch, of what an editor compiles a design with locally.
+LOCAL_COMPILE_FILES = ["kobento/definitions.json", "kobento/theme.json", "kobento/json2rc.mjs"]
 
 # The seed a new design starts from when none is named: a host opens the first template listed.
 DEFAULT_TEMPLATE = "kobento-screen"
@@ -357,7 +360,18 @@ def published_of(snapshot: dict) -> dict:
             # its policy (docs/design/UI_BUILDER_CATALOG_FORMATS.md there).
             "documentFormat": {"adapter": "kobento-component-json", "version": 1},
             # Read by the Kobento exporter, passed through verbatim by every other reader.
+            # Files a host fetches from this catalog and serves to its editor, beside the
+            # templates: what an editor compiles a Kobento design with, in the browser.
+            "files": LOCAL_COMPILE_FILES,
             "kobento": {
+                # How an editor compiles a design itself: expand its calls with the definitions and
+                # theme (compose-ui-builder's KobentoComponentExpander), then json2rc. A host that
+                # does not serve the files leaves the editor on its own export.
+                "localCompile": {
+                    "definitions": "kobento/definitions.json",
+                    "theme": "kobento/theme.json",
+                    "compiler": "kobento/json2rc.mjs",
+                },
                 "componentSets": snapshot["sets"],
                 "looks": LOOKS,
                 "clickable": clickable,
@@ -422,6 +436,8 @@ def check_definitions(snapshot: dict) -> None:
     for name, definition in definitions["components"].items():
         if "body" not in definition:
             sys.exit(f"{DEFINITIONS.relative_to(ROOT)}: {name} has no body")
+    if not COMPILER.read_text().startswith("/* json2rc from kobento/kobento-tools@"):
+        sys.exit(f"{COMPILER.relative_to(ROOT)} is not generator/build-json2rc.sh's output")
     numbers, colors = theme_tokens(definitions)
     unknown = [n for n in numbers if n not in theme["numbers"]]
     if unknown:
