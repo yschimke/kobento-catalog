@@ -149,6 +149,44 @@ def property_of(name: str, spec: dict) -> dict:
     return prop
 
 
+# How the editing canvas draws a component: the closest adapter the canvas already has, and how that
+# adapter reads the component's own vocabulary (`canvasMapping`: target property <- Kobento's name).
+# An approximation (Material look-alikes, not Kobento's styling): the canvas is for arranging and
+# editing, and the Preview pane plays Kobento's own `.rc`. A component not listed stays a labelled
+# placeholder.
+CANVAS = {
+    "document": ("layout/column", {"slots": {"children": "content"}}),
+    "text": ("m3/text", {"properties": {"text": "value", "fontSizeSp": "fontSize"}}),
+    "button": ("m3/button", {"properties": {"text": "label"}}),
+    "fab": ("m3/button", {"properties": {"text": "label"}}),
+    "switch": ("m3/switch", None),
+    "checkbox": ("m3/checkbox", None),
+    "slider": ("m3/slider", {"properties": {"valueFrom": "min", "valueTo": "max"}}),
+    "progress-bar": ("m3/progress-indicator", None),
+    "progress-ring": ("m3/progress-indicator", {"defaults": {"variant": "circular"}}),
+    "card": ("m3/card", None),
+    "divider": ("m3/horizontal-divider", None),
+    "text-field": ("m3/outlined-text-field", None),
+    "big-number": ("m3/text", {"properties": {"text": "value"}}),
+    "label-value": ("m3/text", {"properties": {"text": "value"}}),
+    "stat-tile": ("m3/text", {"properties": {"text": "value"}}),
+    "badge": ("m3/text", None),
+    "banner": ("m3/text", None),
+    "snackbar": ("m3/text", None),
+}
+
+
+def with_canvas(component_id: str, builtin: dict) -> dict:
+    drawn = CANVAS.get(component_id.removeprefix(PREFIX))
+    if drawn is None:
+        return builtin
+    adapter, mapping = drawn
+    builtin["canvas"] = adapter
+    if mapping:
+        builtin["canvasMapping"] = mapping
+    return builtin
+
+
 def published_of(snapshot: dict) -> dict:
     builtins = {
         # The document itself: Kobento's root column on the theme background.
@@ -194,6 +232,7 @@ def published_of(snapshot: dict) -> dict:
             }
         builtins[component_id] = builtin
         menu[component_id] = {"group": "Components"}
+    builtins = {cid: with_canvas(cid, b) for cid, b in builtins.items()}
     templates = templates_of(builtins)
     clickable = sorted(
         PREFIX + kebab(c["name"])
@@ -222,7 +261,8 @@ def published_of(snapshot: dict) -> dict:
                     "fidelity": "approximate",
                     "reason": (
                         "Kobento components are expanded by Kobento's server, not composed. The "
-                        "canvas draws each as a labelled placeholder; the picture comes from "
+                        "canvas draws the common ones as Material look-alikes and the rest as labelled "
+                        "placeholders; the picture comes from "
                         "playing the converted .rc."
                     ),
                 },
