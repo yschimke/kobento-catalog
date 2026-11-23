@@ -39,6 +39,8 @@ catalog/kobento/               component definitions, default theme and json2rc.
 generator/build-json2rc.sh     rebuilds json2rc.mjs from a pinned kobento-tools commit
 generator/icons.py, build-icons.sh  Material Symbols shards for `$icon`, built at publish from a
                                pinned google/material-design-icons commit (not committed)
+generator/starters.py          sample data a chart is inserted (and pictured) with: this repo's own
+                               numbers, published as builtins' insertContent; series params
 catalog/designs/*.json         seed documents (hand-written), listed in ui-builder.json's templates
 .github/workflows/ci.yml       `check`, the required check: catalog matches the generator, JSON parses
 .github/workflows/publish.yml  main -> yschimke/kobento-catalog-out@design-artifacts/kobento (ARTIFACTS_TOKEN),
