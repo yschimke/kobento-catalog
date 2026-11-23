@@ -57,6 +57,20 @@ jobs:
           mkdir -p "$out/kobento"
           cp catalog/kobento/definitions.json catalog/kobento/theme.json catalog/kobento/json2rc.mjs \
             catalog/kobento/NOTICE catalog/kobento/LICENSE "$out/kobento/"
+          # The Material Symbols `$icon` draws, a shard at a time (generator/icons.py).
+          generator/build-icons.sh "$out/kobento/icons"
+          # Every file ui-builder.json lists is published: a host serves only those, and one it
+          # lists but cannot fetch leaves the editor on the host's export.
+          python3 -I - "$out" <<'PY'
+          import json, sys
+          from pathlib import Path
+          out = Path(sys.argv[1])
+          files = json.loads((out / "ui-builder.json").read_text())["statusSemantics"]["files"]
+          missing = [f for f in files if not (out / f).is_file()]
+          if missing:
+              sys.exit(f"listed but not published: {missing[:5]} ({len(missing)})")
+          print(f"all {len(files)} listed files published")
+          PY
           # The seed documents, at the paths ui-builder.json's statusSemantics.templates names.
           mkdir -p "$out/ui-builder/designs"
           cp catalog/designs/*.json "$out/ui-builder/designs/"
