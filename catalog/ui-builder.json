@@ -225,6 +225,9 @@
         "kobento/nav-shell": {
           "group": "Components"
         },
+        "kobento/navigator": {
+          "group": "Components"
+        },
         "kobento/numbered-list": {
           "group": "Components"
         },
@@ -4188,14 +4191,6 @@
             "notes": "Kobento type variable"
           },
           {
-            "name": "open",
-            "jsonType": [
-              "boolean",
-              "number"
-            ],
-            "notes": "Kobento type variable"
-          },
-          {
             "name": "wideAt",
             "jsonType": "number",
             "notes": "Kobento type float; default 600; static: fixed when the call is expanded, not bindable to state"
@@ -4766,6 +4761,84 @@
             "name": "more",
             "jsonType": "array",
             "notes": "Kobento type list; default []; static: fixed when the call is expanded, not bindable to state"
+          }
+        ],
+        "modifierCapabilities": []
+      },
+      "kobento/navigator": {
+        "role": "element",
+        "displayName": "Navigator",
+        "canvas": "placeholder",
+        "properties": [
+          {
+            "name": "destinations",
+            "jsonType": "array",
+            "required": true,
+            "notes": "Kobento type list; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "start",
+            "jsonType": "string",
+            "notes": "Kobento type string; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "hostBack",
+            "jsonType": [
+              "boolean",
+              "number"
+            ],
+            "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "topBar",
+            "jsonType": [
+              "boolean",
+              "number"
+            ],
+            "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "scroll",
+            "jsonType": [
+              "boolean",
+              "number"
+            ],
+            "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "wideAt",
+            "jsonType": "number",
+            "notes": "Kobento type float; default 600; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "listShare",
+            "jsonType": "number",
+            "notes": "Kobento type float; default 0.38; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "listMin",
+            "jsonType": "number",
+            "notes": "Kobento type float; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "listMax",
+            "jsonType": "number",
+            "notes": "Kobento type float; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "duration",
+            "jsonType": "number",
+            "notes": "Kobento type float; default 0.3; static: fixed when the call is expanded, not bindable to state"
+          },
+          {
+            "name": "width",
+            "jsonType": "number",
+            "notes": "Kobento type float; a literal or a \"@variable\""
+          },
+          {
+            "name": "height",
+            "jsonType": "number",
+            "notes": "Kobento type float; a literal or a \"@variable\""
           }
         ],
         "modifierCapabilities": []
@@ -9330,6 +9403,18 @@
           "pagePadding",
           "railAt",
           "scroll"
+        ],
+        "kobento/navigator": [
+          "destinations",
+          "duration",
+          "hostBack",
+          "listMax",
+          "listMin",
+          "listShare",
+          "scroll",
+          "start",
+          "topBar",
+          "wideAt"
         ],
         "kobento/numbered-list": [
           "fontSize",

@@ -3020,9 +3020,6 @@
         "selected": {
           "type": "variable"
         },
-        "open": {
-          "type": "variable"
-        },
         "wideAt": {
           "type": "float",
           "default": 600,
@@ -3471,6 +3468,65 @@
           "type": "list",
           "default": [],
           "static": true
+        }
+      },
+      "slots": {}
+    },
+    {
+      "name": "Navigator",
+      "params": {
+        "destinations": {
+          "type": "list",
+          "required": true,
+          "static": true
+        },
+        "start": {
+          "type": "string",
+          "static": true
+        },
+        "hostBack": {
+          "type": "bool",
+          "default": true,
+          "static": true
+        },
+        "topBar": {
+          "type": "bool",
+          "default": true,
+          "static": true
+        },
+        "scroll": {
+          "type": "bool",
+          "default": true,
+          "static": true
+        },
+        "wideAt": {
+          "type": "float",
+          "default": 600,
+          "static": true
+        },
+        "listShare": {
+          "type": "float",
+          "default": 0.38,
+          "static": true
+        },
+        "listMin": {
+          "type": "float",
+          "static": true
+        },
+        "listMax": {
+          "type": "float",
+          "static": true
+        },
+        "duration": {
+          "type": "float",
+          "default": 0.3,
+          "static": true
+        },
+        "width": {
+          "type": "float"
+        },
+        "height": {
+          "type": "float"
         }
       },
       "slots": {}
