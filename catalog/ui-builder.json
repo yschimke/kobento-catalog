@@ -491,6 +491,66 @@
           }
         ],
         "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "rings": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Move"
+                    },
+                    "value": {
+                      "type": "float",
+                      "value": 420
+                    },
+                    "target": {
+                      "type": "float",
+                      "value": 600
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Exercise"
+                    },
+                    "value": {
+                      "type": "float",
+                      "value": 24
+                    },
+                    "target": {
+                      "type": "float",
+                      "value": 30
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Stand"
+                    },
+                    "value": {
+                      "type": "float",
+                      "value": 9
+                    },
+                    "target": {
+                      "type": "float",
+                      "value": 12
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
         "slots": {
           "content": {
             "required": false,
@@ -568,9 +628,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "items",
@@ -608,7 +668,60 @@
             "notes": "Kobento type string; default \"Allocation\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 50
+                },
+                {
+                  "type": "float",
+                  "value": 30
+                },
+                {
+                  "type": "float",
+                  "value": 20
+                }
+              ]
+            },
+            "items": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Stocks"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Bonds"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Cash"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/analog-clock": {
         "role": "element",
@@ -816,9 +929,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "labels",
@@ -854,7 +967,40 @@
             "notes": "Kobento type string; default \"Bar chart\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 7
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 8
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/battery-indicator": {
         "role": "element",
@@ -1313,27 +1459,27 @@
         "properties": [
           {
             "name": "open",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "high",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "low",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "close",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "y_min",
@@ -1399,7 +1545,127 @@
             "notes": "Kobento type string; default \"Candlestick chart\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "open": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 10
+                },
+                {
+                  "type": "float",
+                  "value": 12
+                },
+                {
+                  "type": "float",
+                  "value": 11
+                },
+                {
+                  "type": "float",
+                  "value": 14
+                },
+                {
+                  "type": "float",
+                  "value": 13
+                },
+                {
+                  "type": "float",
+                  "value": 15
+                }
+              ]
+            },
+            "close": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 12
+                },
+                {
+                  "type": "float",
+                  "value": 11
+                },
+                {
+                  "type": "float",
+                  "value": 14
+                },
+                {
+                  "type": "float",
+                  "value": 13
+                },
+                {
+                  "type": "float",
+                  "value": 15
+                },
+                {
+                  "type": "float",
+                  "value": 17
+                }
+              ]
+            },
+            "high": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 13
+                },
+                {
+                  "type": "float",
+                  "value": 13
+                },
+                {
+                  "type": "float",
+                  "value": 15
+                },
+                {
+                  "type": "float",
+                  "value": 15
+                },
+                {
+                  "type": "float",
+                  "value": 16
+                },
+                {
+                  "type": "float",
+                  "value": 18
+                }
+              ]
+            },
+            "low": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 9
+                },
+                {
+                  "type": "float",
+                  "value": 10
+                },
+                {
+                  "type": "float",
+                  "value": 10
+                },
+                {
+                  "type": "float",
+                  "value": 12
+                },
+                {
+                  "type": "float",
+                  "value": 12
+                },
+                {
+                  "type": "float",
+                  "value": 14
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/card": {
         "role": "element",
@@ -2718,9 +2984,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "color",
@@ -2780,7 +3046,28 @@
             "notes": "Kobento type variable"
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 45
+                },
+                {
+                  "type": "float",
+                  "value": 30
+                },
+                {
+                  "type": "float",
+                  "value": 25
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/dropdown": {
         "role": "element",
@@ -3624,9 +3911,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "cols",
@@ -3745,7 +4032,108 @@
             "notes": "Kobento type string; default \"Heatmap\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "rows": {
+              "type": "float",
+              "value": 3
+            },
+            "cols": {
+              "type": "float",
+              "value": 7
+            },
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 1
+                },
+                {
+                  "type": "float",
+                  "value": 0
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 7
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 1
+                },
+                {
+                  "type": "float",
+                  "value": 1
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 7
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/icon": {
         "role": "element",
@@ -3993,9 +4381,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "labels",
@@ -4039,7 +4427,45 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 45
+                },
+                {
+                  "type": "float",
+                  "value": 30
+                },
+                {
+                  "type": "float",
+                  "value": 25
+                }
+              ]
+            },
+            "labels": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "First"
+                },
+                {
+                  "type": "string",
+                  "value": "Second"
+                },
+                {
+                  "type": "string",
+                  "value": "Third"
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/line-chart": {
         "role": "element",
@@ -4048,8 +4474,8 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "jsonType": "array",
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "fn",
@@ -4161,7 +4587,40 @@
             "notes": "Kobento type string; default \"Line chart\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 7
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 8
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/list-detail": {
         "role": "element",
@@ -4651,7 +5110,67 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "value": {
+              "type": "float",
+              "value": 14
+            },
+            "target": {
+              "type": "float",
+              "value": 20
+            },
+            "unit": {
+              "type": "string",
+              "value": "kWh"
+            },
+            "parts": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Heating"
+                    },
+                    "value": {
+                      "type": "float",
+                      "value": 12
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Lights"
+                    },
+                    "value": {
+                      "type": "float",
+                      "value": 5
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Other"
+                    },
+                    "value": {
+                      "type": "float",
+                      "value": 3
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/moon-phase": {
         "role": "element",
@@ -5158,9 +5677,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "baseline",
@@ -5245,7 +5764,40 @@
             "notes": "Kobento type string; default \"Price chart\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 102.4
+                },
+                {
+                  "type": "float",
+                  "value": 104.1
+                },
+                {
+                  "type": "float",
+                  "value": 103.2
+                },
+                {
+                  "type": "float",
+                  "value": 106.8
+                },
+                {
+                  "type": "float",
+                  "value": 105.5
+                },
+                {
+                  "type": "float",
+                  "value": 108.3
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/progress-bar": {
         "role": "element",
@@ -5430,14 +5982,14 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "compare",
-            "jsonType": "number",
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "jsonType": "array",
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "labels",
@@ -5499,7 +6051,61 @@
             "notes": "Kobento type string; default \"Radar chart\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 7
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 8
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                }
+              ]
+            },
+            "labels": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "Speed"
+                },
+                {
+                  "type": "string",
+                  "value": "Range"
+                },
+                {
+                  "type": "string",
+                  "value": "Power"
+                },
+                {
+                  "type": "string",
+                  "value": "Comfort"
+                },
+                {
+                  "type": "string",
+                  "value": "Price"
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/radio-group": {
         "role": "element",
@@ -5628,9 +6234,9 @@
           },
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "unit",
@@ -5656,7 +6262,45 @@
             "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "names": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "First"
+                },
+                {
+                  "type": "string",
+                  "value": "Second"
+                },
+                {
+                  "type": "string",
+                  "value": "Third"
+                }
+              ]
+            },
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 92
+                },
+                {
+                  "type": "float",
+                  "value": 74
+                },
+                {
+                  "type": "float",
+                  "value": 58
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/rating": {
         "role": "element",
@@ -6091,20 +6735,20 @@
         "properties": [
           {
             "name": "x",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "y",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "sizes",
-            "jsonType": "number",
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "jsonType": "array",
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "x_min",
@@ -6185,7 +6829,69 @@
             "notes": "Kobento type string; default \"Scatter plot\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "x": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 1
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                }
+              ]
+            },
+            "y": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 7
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/scene3-d": {
         "role": "element",
@@ -6466,9 +7172,9 @@
         "properties": [
           {
             "name": "stages",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "lanes",
@@ -6496,7 +7202,60 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "stages": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 0
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 1
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 1
+                },
+                {
+                  "type": "float",
+                  "value": 0
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/slider": {
         "role": "element",
@@ -6605,9 +7364,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "color",
@@ -6651,7 +7410,40 @@
             "notes": "Kobento type string; default \"Trend\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 7
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 8
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/spinner": {
         "role": "element",
@@ -8065,9 +8857,9 @@
         "properties": [
           {
             "name": "values",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "baseline",
@@ -8124,7 +8916,40 @@
             "notes": "Kobento type string; default \"Trend\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "values": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 5
+                },
+                {
+                  "type": "float",
+                  "value": 4
+                },
+                {
+                  "type": "float",
+                  "value": 7
+                },
+                {
+                  "type": "float",
+                  "value": 6
+                },
+                {
+                  "type": "float",
+                  "value": 8
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/two-columns": {
         "role": "element",
@@ -8436,8 +9261,8 @@
           },
           {
             "name": "values",
-            "jsonType": "number",
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "jsonType": "array",
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "valueCountries",
@@ -8484,13 +9309,13 @@
           },
           {
             "name": "pointsLon",
-            "jsonType": "number",
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "jsonType": "array",
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "pointsLat",
-            "jsonType": "number",
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "jsonType": "array",
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "routeFrom",
@@ -8918,6 +9743,61 @@
         "kobento/switch",
         "kobento/tabs"
       ],
+      "seriesParams": {
+        "kobento/allocation-bar": [
+          "values"
+        ],
+        "kobento/bar-chart": [
+          "values"
+        ],
+        "kobento/candlestick": [
+          "close",
+          "high",
+          "low",
+          "open"
+        ],
+        "kobento/donut-chart": [
+          "values"
+        ],
+        "kobento/heatmap": [
+          "values"
+        ],
+        "kobento/legend": [
+          "values"
+        ],
+        "kobento/line-chart": [
+          "values"
+        ],
+        "kobento/price-chart": [
+          "values"
+        ],
+        "kobento/radar-chart": [
+          "compare",
+          "values"
+        ],
+        "kobento/ranked-list": [
+          "values"
+        ],
+        "kobento/scatter-plot": [
+          "sizes",
+          "x",
+          "y"
+        ],
+        "kobento/sleep-stages": [
+          "stages"
+        ],
+        "kobento/sparkline": [
+          "values"
+        ],
+        "kobento/trend-sparkline": [
+          "values"
+        ],
+        "kobento/world-map": [
+          "pointsLat",
+          "pointsLon",
+          "values"
+        ]
+      },
       "staticParams": {
         "kobento/activity-rings": [
           "legend",

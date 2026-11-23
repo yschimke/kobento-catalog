@@ -44,6 +44,7 @@ def _sibling(name):
 
 
 icons = _sibling("icons")
+starters = _sibling("starters")
 
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT = ROOT / "catalog" / "components.snapshot.json"
@@ -278,13 +279,14 @@ def notes(spec: dict) -> str:
     return "; ".join(parts)
 
 
-def property_of(name: str, spec: dict) -> dict:
-    prop = {"name": name, "jsonType": JSON_TYPES[spec["type"]]}
+def property_of(name: str, spec: dict, series: bool = False) -> dict:
+    # A float the definition reads as an array is a series: a list of numbers, not one.
+    prop = {"name": name, "jsonType": "array" if series else JSON_TYPES[spec["type"]]}
     if spec.get("required"):
         prop["required"] = True
     if spec.get("values"):
         prop["allowedValues"] = spec["values"]
-    prop["notes"] = notes(spec)
+    prop["notes"] = notes(spec) + ("; a series: a list of numbers" if series else "")
     return prop
 
 
@@ -323,21 +325,37 @@ def published_of(snapshot: dict) -> dict:
         },
     }
     menu = {PREFIX + "text": {"group": "Text"}}
+    definitions = json.loads(DEFINITIONS.read_text())["components"]
+    starters.check({c["name"]: c["params"] for c in snapshot["components"]})
+    series_of = {
+        c["name"]: starters.float_arrays(definitions.get(c["name"], {}))
+        for c in snapshot["components"]
+    }
     for component in snapshot["components"]:
         name = component["name"]
         component_id = PREFIX + kebab(name)
         params = component["params"]
+        series = series_of[name]
         builtin = {
             "role": "element",
             "displayName": display_name(name),
             "canvas": "placeholder",
             "properties": [
-                property_of(param, spec)
+                property_of(param, spec, param in series)
                 for param, spec in params.items()
                 if spec["type"] != "action"
             ],
             "modifierCapabilities": [],
         }
+        if name in starters.STARTERS:
+            # What an insert starts with, and so what the palette pictures: sample data, so a
+            # chart draws something rather than nothing (generator/starters.py).
+            builtin["insertContent"] = {
+                "properties": {
+                    param: starters.encode(value)
+                    for param, value in starters.STARTERS[name].items()
+                }
+            }
         if component["slots"]:
             builtin["slots"] = {
                 slot: {"required": not spec["optional"], "ordered": True}
@@ -405,6 +423,13 @@ def published_of(snapshot: dict) -> dict:
                 "componentSets": snapshot["sets"],
                 "looks": LOOKS,
                 "clickable": clickable,
+                # Params read as a series (a float array): the exporter declares a list given to
+                # one in resources.floatArrays and passes it by name, as Kobento designs do.
+                "seriesParams": {
+                    PREFIX + kebab(c["name"]): sorted(series_of[c["name"]])
+                    for c in snapshot["components"]
+                    if series_of[c["name"]]
+                },
                 # Params fixed when a call is expanded: the exporter refuses state bound to them.
                 "staticParams": {
                     PREFIX + kebab(c["name"]): sorted(
