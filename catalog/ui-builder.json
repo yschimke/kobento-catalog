@@ -395,7 +395,17 @@
           "content": {
             "ordered": true
           }
-        }
+        },
+        "modifierCapabilities": [
+          "fillMaxSize",
+          "fillMaxWidth",
+          "fillMaxHeight",
+          "width",
+          "height",
+          "size",
+          "padding",
+          "background"
+        ]
       },
       "kobento/text": {
         "role": "element",
@@ -418,6 +428,16 @@
             "jsonType": "string",
             "notes": "\"#AARRGGBB\" or a theme token such as \"@colors.onSurface\""
           }
+        ],
+        "modifierCapabilities": [
+          "fillMaxSize",
+          "fillMaxWidth",
+          "fillMaxHeight",
+          "width",
+          "height",
+          "size",
+          "padding",
+          "background"
         ]
       },
       "kobento/activity-rings": {
@@ -470,6 +490,7 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "content": {
             "required": false,
@@ -528,6 +549,7 @@
             "notes": "Kobento type float; default 0; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "first": {
             "required": true,
@@ -585,7 +607,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Allocation\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/analog-clock": {
         "role": "element",
@@ -641,7 +664,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Clock\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/anchor": {
         "role": "element",
@@ -669,6 +693,7 @@
             "notes": "Kobento type float; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "content": {
             "required": true,
@@ -702,7 +727,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/badge": {
         "role": "element",
@@ -734,7 +760,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"99+\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/banner": {
         "role": "element",
@@ -774,6 +801,7 @@
             "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "action": {
             "required": false,
@@ -825,7 +853,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Bar chart\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/battery-indicator": {
         "role": "element",
@@ -876,7 +905,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Battery\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/big-number": {
         "role": "element",
@@ -971,7 +1001,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/board": {
         "role": "element",
@@ -1056,6 +1087,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "headerEnd": {
             "required": false,
@@ -1111,6 +1143,7 @@
             "notes": "Kobento type bool; default false; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "icon": {
             "required": false,
@@ -1190,6 +1223,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "headerEnd": {
             "required": false,
@@ -1264,6 +1298,7 @@
             "notes": "Kobento type color; default \"@colors.background\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "visual": {
             "required": true,
@@ -1363,7 +1398,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Candlestick chart\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/card": {
         "role": "element",
@@ -1386,6 +1422,7 @@
             "notes": "Kobento type color; default \"@colors.surface\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "content": {
             "required": false,
@@ -1452,7 +1489,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/chart3-d": {
         "role": "element",
@@ -1658,7 +1696,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/chat-thread": {
         "role": "element",
@@ -1784,6 +1823,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "lead": {
             "required": false,
@@ -1828,7 +1868,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/chip": {
         "role": "element",
@@ -1854,7 +1895,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/choice-chips": {
         "role": "element",
@@ -1903,7 +1945,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/color-picker": {
         "role": "element",
@@ -1943,7 +1986,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 36; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/compact-number": {
         "role": "element",
@@ -2005,7 +2049,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.onSurface\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/comparison": {
         "role": "element",
@@ -2108,6 +2153,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "footer": {
             "required": false,
@@ -2161,6 +2207,7 @@
             "notes": "Kobento type float; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "image": {
             "required": false,
@@ -2230,6 +2277,7 @@
             "notes": "Kobento type float; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "headerEnd": {
             "required": false,
@@ -2334,7 +2382,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/date-label": {
         "role": "element",
@@ -2379,7 +2428,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/date-picker": {
         "role": "element",
@@ -2443,6 +2493,7 @@
             "notes": "Kobento type list; default [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, [29, \"a\"], [30, \"b\"], [31, \"c\"]]; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "actions": {
             "required": false,
@@ -2526,7 +2577,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 500; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/dialog": {
         "role": "element",
@@ -2580,6 +2632,7 @@
             "notes": "Kobento type enum; default \"dialog\"; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "content": {
             "required": false,
@@ -2637,7 +2690,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/divider": {
         "role": "element",
@@ -2654,7 +2708,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.outline\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/donut-chart": {
         "role": "element",
@@ -2724,7 +2779,8 @@
             ],
             "notes": "Kobento type variable"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/dropdown": {
         "role": "element",
@@ -2790,7 +2846,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/empty-state": {
         "role": "element",
@@ -2837,7 +2894,8 @@
             ],
             "notes": "Kobento type bool; default false; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/equalizer": {
         "role": "element",
@@ -2864,7 +2922,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/expandable-row": {
         "role": "element",
@@ -2959,6 +3018,7 @@
             "notes": "Kobento type float; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "leading": {
             "required": false,
@@ -3014,6 +3074,7 @@
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "icon": {
             "required": true,
@@ -3097,7 +3158,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"@colors.background\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/fretboard": {
         "role": "element",
@@ -3164,7 +3226,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/gallery-grid": {
         "role": "element",
@@ -3263,6 +3326,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "headerEnd": {
             "required": false,
@@ -3343,7 +3407,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 0; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/goal-bar": {
         "role": "element",
@@ -3402,7 +3467,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/graph-diagram": {
         "role": "element",
@@ -3498,7 +3564,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/grouped-bars": {
         "role": "element",
@@ -3547,7 +3614,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/heatmap": {
         "role": "element",
@@ -3676,7 +3744,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Heatmap\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/icon": {
         "role": "element",
@@ -3732,7 +3801,8 @@
             ],
             "notes": "Kobento type enum; default \"auto\"; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/icon-button": {
         "role": "element",
@@ -3779,6 +3849,7 @@
             "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "icon": {
             "required": true,
@@ -3818,6 +3889,7 @@
             "notes": "Kobento type float; default 16; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "result": {
             "required": true,
@@ -3846,6 +3918,7 @@
             "notes": "Kobento type text; default \"\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "trailing": {
             "required": false,
@@ -3910,7 +3983,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/legend": {
         "role": "element",
@@ -3964,7 +4038,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/line-chart": {
         "role": "element",
@@ -4085,7 +4160,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Line chart\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/list-detail": {
         "role": "element",
@@ -4173,6 +4249,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "headerEnd": {
             "required": false,
@@ -4214,6 +4291,7 @@
             "notes": "Kobento type float; default 16; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "leading": {
             "required": false,
@@ -4348,6 +4426,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "headerEnd": {
             "required": false,
@@ -4440,7 +4519,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/menu": {
         "role": "element",
@@ -4505,7 +4585,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Close menu\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/meter-breakdown": {
         "role": "element",
@@ -4569,7 +4650,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/moon-phase": {
         "role": "element",
@@ -4607,7 +4689,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Moon phase\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/nav-shell": {
         "role": "element",
@@ -4684,7 +4767,8 @@
             "jsonType": "array",
             "notes": "Kobento type list; default []; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/numbered-list": {
         "role": "element",
@@ -4721,7 +4805,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 10; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/pager": {
         "role": "element",
@@ -4765,6 +4850,7 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "content": {
             "required": false,
@@ -4794,7 +4880,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/password-field": {
         "role": "element",
@@ -4845,7 +4932,8 @@
             ],
             "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/photo": {
         "role": "element",
@@ -4904,7 +4992,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Photo\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/piano-keys": {
         "role": "element",
@@ -4961,7 +5050,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/post-card": {
         "role": "element",
@@ -5049,6 +5139,7 @@
             "notes": "Kobento type float; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "media": {
             "required": false,
@@ -5153,7 +5244,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Price chart\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/progress-bar": {
         "role": "element",
@@ -5189,7 +5281,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.error\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/progress-ring": {
         "role": "element",
@@ -5225,7 +5318,8 @@
             ],
             "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/qr-placeholder": {
         "role": "element",
@@ -5257,7 +5351,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"#FFFFFFFF\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/quote-row": {
         "role": "element",
@@ -5325,7 +5420,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 60; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/radar-chart": {
         "role": "element",
@@ -5402,7 +5498,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Radar chart\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/radio-group": {
         "role": "element",
@@ -5447,7 +5544,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/range-slider": {
         "role": "element",
@@ -5514,7 +5612,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/ranked-list": {
         "role": "element",
@@ -5556,7 +5655,8 @@
             ],
             "notes": "Kobento type bool; default true; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/rating": {
         "role": "element",
@@ -5609,7 +5709,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/row-list": {
         "role": "element",
@@ -5779,6 +5880,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "summary": {
             "required": false,
@@ -5878,7 +5980,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 320; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/scaled-amount": {
         "role": "element",
@@ -5978,7 +6081,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 36; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/scatter-plot": {
         "role": "element",
@@ -6080,7 +6184,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Scatter plot\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/scene3-d": {
         "role": "element",
@@ -6213,6 +6318,7 @@
             "notes": "Kobento type color; default \"@colors.onSurface\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "overlay": {
             "required": false,
@@ -6256,7 +6362,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.surfaceHigh\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/seek-bar": {
         "role": "element",
@@ -6311,7 +6418,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/skeleton": {
         "role": "element",
@@ -6348,7 +6456,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.surface\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/sleep-stages": {
         "role": "element",
@@ -6386,7 +6495,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/slider": {
         "role": "element",
@@ -6445,7 +6555,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/snackbar": {
         "role": "element",
@@ -6484,7 +6595,8 @@
             ],
             "notes": "Kobento type variable"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/sparkline": {
         "role": "element",
@@ -6538,7 +6650,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Trend\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/spinner": {
         "role": "element",
@@ -6573,7 +6686,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Loading\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/split-flap": {
         "role": "element",
@@ -6765,7 +6879,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"#FF000000\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/stacked-bars": {
         "role": "element",
@@ -6819,7 +6934,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/stat-tile": {
         "role": "element",
@@ -6861,7 +6977,8 @@
             ],
             "notes": "Kobento type bool; default false; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/step-explainer": {
         "role": "element",
@@ -7052,6 +7169,7 @@
             "notes": "Kobento type float; default \"windowHeight()\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "visual": {
             "required": true,
@@ -7101,7 +7219,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/steps": {
         "role": "element",
@@ -7146,7 +7265,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/sweep-trace": {
         "role": "element",
@@ -7243,7 +7363,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 96; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/swipe-row": {
         "role": "element",
@@ -7317,6 +7438,7 @@
             "notes": "Kobento type float; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "content": {
             "required": true,
@@ -7446,6 +7568,7 @@
             "notes": "Kobento type string; default \"Card stack. Swipe right to like, left to pass\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "card": {
             "required": true,
@@ -7477,7 +7600,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/tabs": {
         "role": "element",
@@ -7512,7 +7636,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/text-choice": {
         "role": "element",
@@ -7561,7 +7686,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/text-field": {
         "role": "element",
@@ -7677,7 +7803,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 48; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/time-picker": {
         "role": "element",
@@ -7716,7 +7843,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/timeline-track": {
         "role": "element",
@@ -7777,7 +7905,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/tooltip": {
         "role": "element",
@@ -7828,7 +7957,8 @@
             "jsonType": "number",
             "notes": "Kobento type float; default 2; static: fixed when the call is expanded, not bindable to state"
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/top-bar": {
         "role": "element",
@@ -7847,6 +7977,7 @@
             "notes": "Kobento type color; default \"@colors.surface\"; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "navigation": {
             "required": false,
@@ -7924,7 +8055,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.primary\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/trend-sparkline": {
         "role": "element",
@@ -7991,7 +8123,8 @@
             "jsonType": "string",
             "notes": "Kobento type string; default \"Trend\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/two-columns": {
         "role": "element",
@@ -8024,6 +8157,7 @@
             "notes": "Kobento type float; default 0.5; a literal or a \"@variable\""
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "first": {
             "required": true,
@@ -8125,6 +8259,7 @@
             "notes": "Kobento type bool; default false; static: fixed when the call is expanded, not bindable to state"
           }
         ],
+        "modifierCapabilities": [],
         "slots": {
           "content": {
             "required": false,
@@ -8231,7 +8366,8 @@
             "jsonType": "string",
             "notes": "Kobento type color; default \"@colors.warning\"; a literal or a \"@variable\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       },
       "kobento/world-map": {
         "role": "element",
@@ -8514,7 +8650,8 @@
             "jsonType": "string",
             "notes": "Kobento type text; default \"Map\""
           }
-        ]
+        ],
+        "modifierCapabilities": []
       }
     },
     "documentFormat": {

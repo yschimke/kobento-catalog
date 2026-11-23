@@ -288,6 +288,15 @@ def property_of(name: str, spec: dict) -> dict:
     return prop
 
 
+# The modifiers compose-ui-builder's Kobento exporter writes, on the document and text (and the
+# builder layouts it brings). A component call takes params only, so it offers none: an editor
+# would otherwise offer padding or align that every export then refuses.
+WRITTEN_MODIFIERS = [
+    "fillMaxSize", "fillMaxWidth", "fillMaxHeight", "width", "height", "size", "padding",
+    "background",
+]
+
+
 def published_of(snapshot: dict) -> dict:
     builtins = {
         # The document itself: Kobento's root column on the theme background.
@@ -296,6 +305,7 @@ def published_of(snapshot: dict) -> dict:
             "displayName": "Kobento document",
             "canvas": "placeholder",
             "slots": {"content": {"ordered": True}},
+            "modifierCapabilities": WRITTEN_MODIFIERS,
         },
         # The format's own text primitive, not a library component.
         PREFIX + "text": {
@@ -309,6 +319,7 @@ def published_of(snapshot: dict) -> dict:
                 {"name": "color", "jsonType": "string",
                  "notes": '"#AARRGGBB" or a theme token such as "@colors.onSurface"'},
             ],
+            "modifierCapabilities": WRITTEN_MODIFIERS,
         },
     }
     menu = {PREFIX + "text": {"group": "Text"}}
@@ -325,6 +336,7 @@ def published_of(snapshot: dict) -> dict:
                 for param, spec in params.items()
                 if spec["type"] != "action"
             ],
+            "modifierCapabilities": [],
         }
         if component["slots"]:
             builtin["slots"] = {
