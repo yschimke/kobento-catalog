@@ -31,7 +31,19 @@ import os
 import re
 import sys
 import urllib.request
+import importlib.util
 from pathlib import Path
+
+
+def _sibling(name):
+    """generator/<name>.py, by its path: `python3 -I` keeps this directory off sys.path."""
+    spec = importlib.util.spec_from_file_location(name, Path(__file__).with_name(f"{name}.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+icons = _sibling("icons")
 
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT = ROOT / "catalog" / "components.snapshot.json"
@@ -42,6 +54,10 @@ THEME = ROOT / "catalog" / "kobento" / "theme.json"
 COMPILER = ROOT / "catalog" / "kobento" / "json2rc.mjs"
 # The paths, on the delivery branch, of what an editor compiles a design with locally.
 LOCAL_COMPILE_FILES = ["kobento/definitions.json", "kobento/theme.json", "kobento/json2rc.mjs"]
+# Material Symbols, which `$icon` draws: generator/icons.py's shards, built by build-icons.sh when
+# the catalog is published. Listed, every one, so a host serves exactly these.
+ICONS = "kobento/icons/{variant}/{shard}.json"
+ICON_FILES = icons.shard_paths("kobento/icons/")
 
 # The seed a new design starts from when none is named: a host opens the first template listed.
 DEFAULT_TEMPLATE = "kobento-screen"
@@ -362,7 +378,7 @@ def published_of(snapshot: dict) -> dict:
             # Read by the Kobento exporter, passed through verbatim by every other reader.
             # Files a host fetches from this catalog and serves to its editor, beside the
             # templates: what an editor compiles a Kobento design with, in the browser.
-            "files": LOCAL_COMPILE_FILES,
+            "files": LOCAL_COMPILE_FILES + ICON_FILES,
             "kobento": {
                 # How an editor compiles a design itself: expand its calls with the definitions and
                 # theme (compose-ui-builder's KobentoComponentExpander), then json2rc. A host that
@@ -371,6 +387,8 @@ def published_of(snapshot: dict) -> dict:
                     "definitions": "kobento/definitions.json",
                     "theme": "kobento/theme.json",
                     "compiler": "kobento/json2rc.mjs",
+                    # Fetched a shard at a time, as a design draws from it.
+                    "icons": ICONS,
                 },
                 "componentSets": snapshot["sets"],
                 "looks": LOOKS,
