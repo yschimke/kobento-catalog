@@ -427,9 +427,11 @@ def published_of(snapshot: dict) -> dict:
                 # Params read as a series (a float array): the exporter declares a list given to
                 # one in resources.floatArrays and passes it by name, as Kobento designs do.
                 "seriesParams": {
-                    PREFIX + kebab(c["name"]): sorted(series_of[c["name"]])
+                    PREFIX + kebab(c["name"]): sorted(
+                        series_of[c["name"]] | starters.ITEM_SERIES.get(c["name"], set())
+                    )
                     for c in snapshot["components"]
-                    if series_of[c["name"]]
+                    if series_of[c["name"]] or c["name"] in starters.ITEM_SERIES
                 },
                 # Params fixed when a call is expanded: the exporter refuses state bound to them.
                 "staticParams": {

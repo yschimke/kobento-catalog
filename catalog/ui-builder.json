@@ -4285,7 +4285,85 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "series": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string",
+                      "value": "2024"
+                    },
+                    "values": {
+                      "type": "list",
+                      "values": [
+                        {
+                          "type": "float",
+                          "value": 3
+                        },
+                        {
+                          "type": "float",
+                          "value": 5
+                        },
+                        {
+                          "type": "float",
+                          "value": 4
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string",
+                      "value": "2025"
+                    },
+                    "values": {
+                      "type": "list",
+                      "values": [
+                        {
+                          "type": "float",
+                          "value": 4
+                        },
+                        {
+                          "type": "float",
+                          "value": 6
+                        },
+                        {
+                          "type": "float",
+                          "value": 5
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "labels": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "Q1"
+                },
+                {
+                  "type": "string",
+                  "value": "Q2"
+                },
+                {
+                  "type": "string",
+                  "value": "Q3"
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/heatmap": {
         "role": "element",
@@ -8251,7 +8329,85 @@
             "notes": "Kobento type float; static: fixed when the call is expanded, not bindable to state"
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "series": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string",
+                      "value": "Rent"
+                    },
+                    "values": {
+                      "type": "list",
+                      "values": [
+                        {
+                          "type": "float",
+                          "value": 5
+                        },
+                        {
+                          "type": "float",
+                          "value": 5
+                        },
+                        {
+                          "type": "float",
+                          "value": 5
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "name": {
+                      "type": "string",
+                      "value": "Food"
+                    },
+                    "values": {
+                      "type": "list",
+                      "values": [
+                        {
+                          "type": "float",
+                          "value": 3
+                        },
+                        {
+                          "type": "float",
+                          "value": 4
+                        },
+                        {
+                          "type": "float",
+                          "value": 2
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "labels": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "Jan"
+                },
+                {
+                  "type": "string",
+                  "value": "Feb"
+                },
+                {
+                  "type": "string",
+                  "value": "Mar"
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/stat-tile": {
         "role": "element",
@@ -10326,6 +10482,9 @@
         "kobento/donut-chart": [
           "values"
         ],
+        "kobento/grouped-bars": [
+          "series[].values"
+        ],
         "kobento/heatmap": [
           "values"
         ],
@@ -10358,6 +10517,9 @@
         ],
         "kobento/sparkline": [
           "values"
+        ],
+        "kobento/stacked-bars": [
+          "series[].values"
         ],
         "kobento/trend-sparkline": [
           "values"
