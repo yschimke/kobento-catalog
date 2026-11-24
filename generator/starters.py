@@ -63,7 +63,53 @@ STARTERS = {
     "SleepStages": {"stages": [0, 2, 3, 3, 2, 1, 2, 3, 2, 1, 0]},
     "Sparkline": {"values": SERIES},
     "TrendSparkline": {"values": SERIES},
+    # Components only Kobento's hosted `convert` expands (a `$gen` body): without these the palette
+    # sends each one empty and `convert` refuses it, so it has no picture at all.
+    "Callouts": {
+        "aspect": 1.5,
+        "parts": [{"label": "Screen", "x": 0.5, "y": 0.3}, {"label": "Button", "x": 0.5, "y": 0.8}],
+    },
+    "Chart3D": {"points": [[1, 2, 3], [2, 3, 1], [3, 1, 2], [2, 2, 2]]},
+    "DashboardGrid": {
+        "cards": [
+            {"title": "Revenue", "content": {"type": "Text", "text": "$12k"}},
+            {"title": "Users", "content": {"type": "Text", "text": "1,204"}},
+        ],
+    },
+    "DataTable": {
+        "columns": [{"title": "Name"}, {"title": "Qty"}],
+        "rows": [["Apples", "3"], ["Pears", "5"], ["Plums", "8"]],
+    },
+    "FlowDiagram": {
+        "nodes": [
+            {"id": "a", "label": "Start"},
+            {"id": "b", "label": "Review"},
+            {"id": "c", "label": "Done"},
+        ],
+        "edges": [{"from": "a", "to": "b"}, {"from": "b", "to": "c"}],
+    },
+    "Fretboard": {"chord": "C"},
+    "GraphDiagram": {
+        "edges": [{"from": "A", "to": "B"}, {"from": "B", "to": "C"}, {"from": "A", "to": "C"}],
+    },
+    "Icon": {"name": "favorite"},
+    "MapList": {"items": [{"title": "London", "place": "London"}, {"title": "Paris", "place": "Paris"}]},
+    "MathPlot": {"fn": ["sin(x)"]},
+    "PianoKeys": {"chord": "C"},
+    "Sankey": {"sources": ["Solar", "Grid"], "uses": ["Home", "Car"], "flows": [3, 1, 2, 2]},
+    "Scene3D": {"objects": [{"shape": "box"}]},
+    "SplitFlap": {"text": "HELLO"},
+    "TimelineTrack": {
+        "items": [
+            {"start": "09:00", "end": "10:30", "label": "Standup"},
+            {"start": "11:00", "end": "12:00", "label": "Review"},
+        ],
+    },
 }
+
+# `float` params a `$gen` generator reads as a float array, which [float_arrays] cannot see in a
+# definition: the body hands the param to the generator whole, by name.
+GEN_SERIES = {"Sankey": {"flows"}}
 
 ARRAY_READS = ("arrayLength", "arrayGet", "arrayMax", "arrayMin", "arraySum")
 
@@ -97,8 +143,8 @@ def encode(value):
 
 
 def check(components: dict) -> None:
-    """Fail on a starter naming a component or param the snapshot does not have."""
-    for name, params in STARTERS.items():
+    """Fail on a starter or series naming a component or param the snapshot does not have."""
+    for name, params in list(STARTERS.items()) + list(GEN_SERIES.items()):
         if name not in components:
             raise SystemExit(f"starters.py: {name} is not a Kobento component")
         missing = set(params) - set(components[name])

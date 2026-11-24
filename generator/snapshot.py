@@ -329,6 +329,7 @@ def published_of(snapshot: dict) -> dict:
     starters.check({c["name"]: c["params"] for c in snapshot["components"]})
     series_of = {
         c["name"]: starters.float_arrays(definitions.get(c["name"], {}))
+        | starters.GEN_SERIES.get(c["name"], set())
         for c in snapshot["components"]
     }
     for component in snapshot["components"]:

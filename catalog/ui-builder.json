@@ -1445,6 +1445,53 @@
           }
         ],
         "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "aspect": {
+              "type": "float",
+              "value": 1.5
+            },
+            "parts": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Screen"
+                    },
+                    "x": {
+                      "type": "float",
+                      "value": 0.5
+                    },
+                    "y": {
+                      "type": "float",
+                      "value": 0.3
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "label": {
+                      "type": "string",
+                      "value": "Button"
+                    },
+                    "x": {
+                      "type": "float",
+                      "value": 0.5
+                    },
+                    "y": {
+                      "type": "float",
+                      "value": 0.8
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
         "slots": {
           "visual": {
             "required": true,
@@ -1963,7 +2010,84 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "points": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "list",
+                  "values": [
+                    {
+                      "type": "float",
+                      "value": 1
+                    },
+                    {
+                      "type": "float",
+                      "value": 2
+                    },
+                    {
+                      "type": "float",
+                      "value": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "values": [
+                    {
+                      "type": "float",
+                      "value": 2
+                    },
+                    {
+                      "type": "float",
+                      "value": 3
+                    },
+                    {
+                      "type": "float",
+                      "value": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "values": [
+                    {
+                      "type": "float",
+                      "value": 3
+                    },
+                    {
+                      "type": "float",
+                      "value": 1
+                    },
+                    {
+                      "type": "float",
+                      "value": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "values": [
+                    {
+                      "type": "float",
+                      "value": 2
+                    },
+                    {
+                      "type": "float",
+                      "value": 2
+                    },
+                    {
+                      "type": "float",
+                      "value": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/chat-thread": {
         "role": "element",
@@ -2544,6 +2668,59 @@
           }
         ],
         "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "cards": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string",
+                      "value": "Revenue"
+                    },
+                    "content": {
+                      "type": "object",
+                      "fields": {
+                        "type": {
+                          "type": "string",
+                          "value": "Text"
+                        },
+                        "text": {
+                          "type": "string",
+                          "value": "$12k"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string",
+                      "value": "Users"
+                    },
+                    "content": {
+                      "type": "object",
+                      "fields": {
+                        "type": {
+                          "type": "string",
+                          "value": "Text"
+                        },
+                        "text": {
+                          "type": "string",
+                          "value": "1,204"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
         "slots": {
           "headerEnd": {
             "required": false,
@@ -2649,7 +2826,78 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "columns": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string",
+                      "value": "Name"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string",
+                      "value": "Qty"
+                    }
+                  }
+                }
+              ]
+            },
+            "rows": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "list",
+                  "values": [
+                    {
+                      "type": "string",
+                      "value": "Apples"
+                    },
+                    {
+                      "type": "string",
+                      "value": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "values": [
+                    {
+                      "type": "string",
+                      "value": "Pears"
+                    },
+                    {
+                      "type": "string",
+                      "value": "5"
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "values": [
+                    {
+                      "type": "string",
+                      "value": "Plums"
+                    },
+                    {
+                      "type": "string",
+                      "value": "8"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/date-label": {
         "role": "element",
@@ -3446,7 +3694,86 @@
             "notes": "Kobento type string; default \"@colors.background\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "nodes": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "id": {
+                      "type": "string",
+                      "value": "a"
+                    },
+                    "label": {
+                      "type": "string",
+                      "value": "Start"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "id": {
+                      "type": "string",
+                      "value": "b"
+                    },
+                    "label": {
+                      "type": "string",
+                      "value": "Review"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "id": {
+                      "type": "string",
+                      "value": "c"
+                    },
+                    "label": {
+                      "type": "string",
+                      "value": "Done"
+                    }
+                  }
+                }
+              ]
+            },
+            "edges": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "from": {
+                      "type": "string",
+                      "value": "a"
+                    },
+                    "to": {
+                      "type": "string",
+                      "value": "b"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "from": {
+                      "type": "string",
+                      "value": "b"
+                    },
+                    "to": {
+                      "type": "string",
+                      "value": "c"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/fretboard": {
         "role": "element",
@@ -3514,7 +3841,15 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "chord": {
+              "type": "string",
+              "value": "C"
+            }
+          }
+        }
       },
       "kobento/gallery-grid": {
         "role": "element",
@@ -3852,7 +4187,55 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "edges": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "from": {
+                      "type": "string",
+                      "value": "A"
+                    },
+                    "to": {
+                      "type": "string",
+                      "value": "B"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "from": {
+                      "type": "string",
+                      "value": "B"
+                    },
+                    "to": {
+                      "type": "string",
+                      "value": "C"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "from": {
+                      "type": "string",
+                      "value": "A"
+                    },
+                    "to": {
+                      "type": "string",
+                      "value": "C"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/grouped-bars": {
         "role": "element",
@@ -4190,7 +4573,15 @@
             "notes": "Kobento type enum; default \"auto\"; static: fixed when the call is expanded, not bindable to state"
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "name": {
+              "type": "string",
+              "value": "favorite"
+            }
+          }
+        }
       },
       "kobento/icon-button": {
         "role": "element",
@@ -4886,6 +5277,41 @@
           }
         ],
         "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "items": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string",
+                      "value": "London"
+                    },
+                    "place": {
+                      "type": "string",
+                      "value": "London"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "title": {
+                      "type": "string",
+                      "value": "Paris"
+                    },
+                    "place": {
+                      "type": "string",
+                      "value": "Paris"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
         "slots": {
           "headerEnd": {
             "required": false,
@@ -4979,7 +5405,20 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "fn": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "sin(x)"
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/menu": {
         "role": "element",
@@ -5570,7 +6009,15 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "chord": {
+              "type": "string",
+              "value": "C"
+            }
+          }
+        }
       },
       "kobento/post-card": {
         "role": "element",
@@ -6547,9 +6994,9 @@
         "properties": [
           {
             "name": "flows",
-            "jsonType": "number",
+            "jsonType": "array",
             "required": true,
-            "notes": "Kobento type float; a literal or a \"@variable\""
+            "notes": "Kobento type float; a literal or a \"@variable\"; a series: a list of numbers"
           },
           {
             "name": "sources",
@@ -6625,7 +7072,58 @@
             "notes": "Kobento type float; default 320; static: fixed when the call is expanded, not bindable to state"
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "sources": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "Solar"
+                },
+                {
+                  "type": "string",
+                  "value": "Grid"
+                }
+              ]
+            },
+            "uses": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "string",
+                  "value": "Home"
+                },
+                {
+                  "type": "string",
+                  "value": "Car"
+                }
+              ]
+            },
+            "flows": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "float",
+                  "value": 3
+                },
+                {
+                  "type": "float",
+                  "value": 1
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                },
+                {
+                  "type": "float",
+                  "value": 2
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/scaled-amount": {
         "role": "element",
@@ -7025,6 +7523,24 @@
           }
         ],
         "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "objects": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "shape": {
+                      "type": "string",
+                      "value": "box"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
         "slots": {
           "overlay": {
             "required": false,
@@ -7672,7 +8188,15 @@
             "notes": "Kobento type color; default \"#FF000000\"; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "text": {
+              "type": "string",
+              "value": "HELLO"
+            }
+          }
+        }
       },
       "kobento/stacked-bars": {
         "role": "element",
@@ -8698,7 +9222,50 @@
             "notes": "Kobento type string; a literal or a \"@variable\""
           }
         ],
-        "modifierCapabilities": []
+        "modifierCapabilities": [],
+        "insertContent": {
+          "properties": {
+            "items": {
+              "type": "list",
+              "values": [
+                {
+                  "type": "object",
+                  "fields": {
+                    "start": {
+                      "type": "string",
+                      "value": "09:00"
+                    },
+                    "end": {
+                      "type": "string",
+                      "value": "10:30"
+                    },
+                    "label": {
+                      "type": "string",
+                      "value": "Standup"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "fields": {
+                    "start": {
+                      "type": "string",
+                      "value": "11:00"
+                    },
+                    "end": {
+                      "type": "string",
+                      "value": "12:00"
+                    },
+                    "label": {
+                      "type": "string",
+                      "value": "Review"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
       },
       "kobento/tooltip": {
         "role": "element",
@@ -9777,6 +10344,9 @@
         ],
         "kobento/ranked-list": [
           "values"
+        ],
+        "kobento/sankey": [
+          "flows"
         ],
         "kobento/scatter-plot": [
           "sizes",
