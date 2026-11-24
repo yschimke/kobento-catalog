@@ -99,6 +99,14 @@ STARTERS = {
     "Sankey": {"sources": ["Solar", "Grid"], "uses": ["Home", "Car"], "flows": [3, 1, 2, 2]},
     "Scene3D": {"objects": [{"shape": "box"}]},
     "SplitFlap": {"text": "HELLO"},
+    "GroupedBars": {
+        "series": [{"name": "2024", "values": [3, 5, 4]}, {"name": "2025", "values": [4, 6, 5]}],
+        "labels": ["Q1", "Q2", "Q3"],
+    },
+    "StackedBars": {
+        "series": [{"name": "Rent", "values": [5, 5, 5]}, {"name": "Food", "values": [3, 4, 2]}],
+        "labels": ["Jan", "Feb", "Mar"],
+    },
     "TimelineTrack": {
         "items": [
             {"start": "09:00", "end": "10:30", "label": "Standup"},
@@ -106,6 +114,11 @@ STARTERS = {
         ],
     },
 }
+
+# Series inside each item of a list param, published as `param[].field`: the exporter declares each
+# item's list in `resources.floatArrays` and passes it by name (compose-ui-builder's
+# `KobentoComponentJsonExporter`), as `series-bars` reads `series[i].values`.
+ITEM_SERIES = {"GroupedBars": {"series[].values"}, "StackedBars": {"series[].values"}}
 
 # `float` params a `$gen` generator reads as a float array, which [float_arrays] cannot see in a
 # definition: the body hands the param to the generator whole, by name.
@@ -144,7 +157,8 @@ def encode(value):
 
 def check(components: dict) -> None:
     """Fail on a starter or series naming a component or param the snapshot does not have."""
-    for name, params in list(STARTERS.items()) + list(GEN_SERIES.items()):
+    item_params = {n: {e.split("[]")[0] for e in es} for n, es in ITEM_SERIES.items()}
+    for name, params in list(STARTERS.items()) + list(GEN_SERIES.items()) + list(item_params.items()):
         if name not in components:
             raise SystemExit(f"starters.py: {name} is not a Kobento component")
         missing = set(params) - set(components[name])
